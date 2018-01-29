@@ -41,12 +41,12 @@ end;
 
 procedure TForm1.send_hiphop_msg(idhttpAPI:TIdHTTP;sRoom,sReciver,sMsg: string);
 (******************************************************************************)
-(** µ{¦¡¦WºÙ:
-(** µ{¦¡»¡©ú: ±N°T®§µo°e¨ì HipChat
-(** «Ø¥ß¤é´Á: 2018/01/27
-(** ²§°Ê¤é´Á: 2018/01/29
-(** ºûÅ@¤H­û: JunJia
-(** ³Æ    µù: Token¶·¥ÑJIRAºŞ²zªÌÅv­­²£¥Í¡A¤@¯ë¨Ï¥ÎªÌµLªk²£¥Í¡C
+(** ç¨‹å¼åç¨±:
+(** ç¨‹å¼èªªæ˜: å°‡è¨Šæ¯ç™¼é€åˆ° HipChat
+(** å»ºç«‹æ—¥æœŸ: 2018/01/27
+(** ç•°å‹•æ—¥æœŸ: 2018/01/29
+(** ç¶­è­·äººå“¡: JunJia
+(** å‚™    è¨»: Tokené ˆç”±JIRAç®¡ç†è€…æ¬Šé™ç”¢ç”Ÿï¼Œä¸€èˆ¬ä½¿ç”¨è€…ç„¡æ³•ç”¢ç”Ÿã€‚
 (******************************************************************************)
 var
   json : TJSONObject;
@@ -54,7 +54,7 @@ var
   sApiURL:string;
   JsonToSend : TStringStream;
   sResponse: string;
-  // ²Õ¦¨°T®§¤º®e(ÃC¦â©|¦b´ú¸Õ)
+  // çµ„æˆè¨Šæ¯å…§å®¹(é¡è‰²å°šåœ¨æ¸¬è©¦)
   function set_msg:string;
   var
     writer : TJsonTextWriter;
@@ -84,7 +84,7 @@ begin
     idhttpAPI.Request.ContentType := 'application/json';
     idhttpAPI.Request.ContentEncoding := 'utf-8';
     try
-      sApiURL := Format('https://api.hipchat.com/v2/room/%s/notification?auth_token=yoGUlzWddLcnuov9CLLZCCsMQj9kchYNnkxWkJgL',//TokenµLªk§@¬°°Ñ¼Æ
+      sApiURL := Format('https://api.hipchat.com/v2/room/%s/notification?auth_token=your_token',//Tokenç„¡æ³•ä½œç‚ºåƒæ•¸
                         [sRoom]);
       sResponse := idhttpAPI.Post(sApiURL,JsonToSend);
     except
